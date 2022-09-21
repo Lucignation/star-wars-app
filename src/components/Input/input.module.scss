@@ -25,9 +25,22 @@
   top: -8px;
   left: 10px;
   background-color: #fff;
+  color: #b0b9c8;
 }
 
 .input:focus {
   outline: #0a74dc;
   border: 1px solid #0a74dc;
+}
+
+@media (max-width: 912px) {
+  .input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .input {
+    width: 100%;
+  }
 }
