@@ -32,27 +32,7 @@ const Login = () => {
           hideProgressBar: true,
           position: 'top-center',
         });
-      notify();
-    }
-
-    if (password.length < 6) {
-      const errorNotify = () =>
-        toast.error('Password must be 6 or more characters long', {
-          theme: 'colored',
-          hideProgressBar: true,
-          position: 'top-center',
-        });
-      errorNotify();
-    }
-
-    if (!password.match(PasswordRegEx)) {
-      const errorNotify = () =>
-        toast.error('Password must be a combination of letters and numbers', {
-          theme: 'colored',
-          hideProgressBar: true,
-          position: 'top-center',
-        });
-      errorNotify();
+      return notify();
     }
 
     if (!email.match(emailValidation)) {
@@ -62,8 +42,29 @@ const Login = () => {
           hideProgressBar: true,
           position: 'top-center',
         });
-      errorNotify();
+      return errorNotify();
     }
+
+    if (!password.match(PasswordRegEx)) {
+      const errorNotify = () =>
+        toast.error('Password must be a combination of letters and numbers', {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      return errorNotify();
+    }
+
+    if (password.length < 6) {
+      const errorNotify = () =>
+        toast.error('Password must be 6 or more characters long', {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      return errorNotify();
+    }
+
     const signinObj = {
       email,
       password,
