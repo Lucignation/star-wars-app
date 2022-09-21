@@ -1,0 +1,85 @@
+.login_container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  //   min-height: 100%;
+}
+
+.login_logo_corner {
+  background: #031434;
+  padding: 407px 47px 408px 48px;
+}
+
+.login_sub_heading {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #737373;
+  padding-bottom: 54px;
+}
+
+.login_heading {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  color: #434854;
+}
+
+.login_inputs {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 467px;
+  height: 594px;
+  left: 763px;
+  top: 209px;
+
+  background: #ffffff;
+  border: 1px solid rgba(164, 167, 183, 0.3);
+  border-radius: 8px;
+  padding-left: 66px;
+  padding-right: 66px;
+}
+
+.login_privacy_services {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 167% */
+  margin-top: 96px;
+  padding-bottom: 38px !important;
+  text-align: center;
+  color: #a4a4a4;
+  bottom: 10px;
+}
+
+.login_privacy_services_link {
+  text-decoration-line: underline;
+
+  color: #303b54;
+}
+
+.forgot_password_link {
+  padding-top: 24px;
+  text-align: center;
+}
+
+.forgot_password_link a {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  text-decoration: none;
+
+  color: #0a74dc;
+}
