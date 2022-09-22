@@ -3,6 +3,8 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { Store } from '../common/interfaces/interface';
 import { IFilm } from '../common/interfaces/IFilm';
 import { IStarship } from '../common/interfaces/IStarship';
+import { ISpecies } from '../common/interfaces/ISpecies';
+import { IPeople } from '../common/interfaces/IPeople';
 
 const initialState: Store = {
   people: {
@@ -110,10 +112,10 @@ export const userSlice = createSlice({
       };
     },
 
-    getAllPeople: (state: Store, action: PayloadAction<Store>) => {
+    getAllPeople: (state: Store, action: PayloadAction<IPeople[]>) => {
       return {
         ...state,
-        allPeople: action.payload.allPeople,
+        allPeople: action.payload,
       };
     },
 
@@ -131,17 +133,17 @@ export const userSlice = createSlice({
       };
     },
 
-    getSpecie: (state: Store, action: PayloadAction<Store>) => {
+    getSpecie: (state: Store, action: PayloadAction<ISpecies>) => {
       return {
         ...state,
-        specie: action.payload.specie,
+        specie: action.payload,
       };
     },
 
-    getSpecies: (state: Store, action: PayloadAction<Store>) => {
+    getSpecies: (state: Store, action: PayloadAction<ISpecies[]>) => {
       return {
         ...state,
-        species: action.payload.species,
+        species: action.payload,
       };
     },
 

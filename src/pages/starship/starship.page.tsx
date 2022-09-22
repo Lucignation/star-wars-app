@@ -27,6 +27,8 @@ const Starship: FC<props> = () => {
 
   let { id } = useParams();
 
+  console.log(starship);
+
   useEffect(() => {
     try {
       const fetchData = async () => {
@@ -36,6 +38,7 @@ const Starship: FC<props> = () => {
         dispatch(getStarship(res.data));
 
         console.log(res.data);
+        console.log(res.response);
       };
 
       fetchData();
@@ -50,7 +53,7 @@ const Starship: FC<props> = () => {
       <Sidebar />
       <div className={styles.starship_content}>
         <Navbar backBtn={true} />
-        <div className={styles.film_content_info}>
+        <div className={styles.starship_content_info}>
           <img src={Cover} alt='Cover page' />
           <div>
             <h1 className={styles.starship_title}>{starship?.name}</h1>

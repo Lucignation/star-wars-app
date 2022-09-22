@@ -13,6 +13,10 @@ import Dashboard from './pages/dashboard/dashboard.page';
 import Film from './pages/film/film.page';
 import Starships from './pages/starships/starships.page';
 import Starship from './pages/starship/starship.page';
+import Species from './pages/species/species.page';
+import Specie from './pages/specie/specie.page';
+import People from './pages/people/people.page';
+import Person from './pages/person/person.page';
 
 function App() {
   return (
@@ -29,6 +33,14 @@ function App() {
           <Route path='/starships' element={<Starships />} />
 
           <Route path='/starships/:id' element={<Starship />} />
+
+          <Route path='/species' element={<Species />} />
+
+          <Route path='/species/:id' element={<Specie />} />
+
+          <Route path='/people' element={<People />} />
+
+          <Route path='/people/:id' element={<Person />} />
         </Routes>
       </Router>
     </>
