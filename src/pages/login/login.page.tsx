@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //imports from folders
 import Input from '../../components/Input/input.component';
@@ -12,6 +13,7 @@ import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
@@ -69,9 +71,9 @@ const Login = () => {
       email,
       password,
     };
-
-    const url = 'auth/login';
     console.log(signinObj);
+
+    navigate('/dashboard');
 
     // const res = await axiosInstance.post(url, signinObj);
 

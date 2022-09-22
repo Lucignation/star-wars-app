@@ -1,0 +1,53 @@
+.starships_container {
+  display: grid;
+  grid-template-columns: 19% 82%;
+  //   width: 100%;
+}
+
+.starships_content {
+  width: 98%;
+  background-color: #fff;
+}
+
+.table_heading {
+  // color: #303b54;
+  color: #a4a7b7;
+  //   background-color: #a4a7b7;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.table_container {
+  background: #ffffff;
+  outline: none;
+  border: 1px solid rgba(164, 167, 183, 0.4);
+  border-radius: 14px !important;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeee3f;
+}
+
+tr {
+  cursor: pointer;
+}
+
+.starships_main {
+  width: 96% !important;
+  margin: auto;
+  margin-top: 75px;
+}
+
+.starships_title {
+  margin-bottom: 31px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  color: #a4a7b7;
+}

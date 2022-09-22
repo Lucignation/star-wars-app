@@ -20,10 +20,10 @@ const Input: FC<props> = ({ formType, placeholder, name, setValue, value }) => {
   return (
     <div className={styles.input_container}>
       {formType === 'password' ? (
-        <div className={`input-group ${styles.singleInput}`}>
+        <div className={`${styles.singleInput}`}>
           <input
             type={showPassword ? 'text' : 'password'}
-            className={`form-control ${styles.input}`}
+            className={`${styles.input}`}
             name={name}
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -31,10 +31,10 @@ const Input: FC<props> = ({ formType, placeholder, name, setValue, value }) => {
           <small className={styles.placeholder}>{placeholder}</small>
         </div>
       ) : (
-        <div className={`input-group ${styles.singleInput}`}>
+        <div className={`${styles.singleInput}`}>
           <input
             type='text'
-            className={`form-control ${styles.input}`}
+            className={`${styles.input}`}
             name={name}
             value={value}
             onChange={(e) => setValue(e.target.value)}

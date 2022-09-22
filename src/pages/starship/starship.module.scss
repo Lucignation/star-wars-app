@@ -1,0 +1,41 @@
+.starship_container {
+  display: grid;
+  grid-template-columns: 19% 82%;
+  //   width: 100%;
+}
+
+.starship_content {
+  width: 98%;
+  background-color: #fff;
+}
+
+.starship_content_info {
+  padding: 44px 28px;
+  display: grid;
+  grid-template-columns: 30% 68%;
+  grid-gap: 2%;
+}
+
+.starship_title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 24px;
+  /* identical to box height, or 50% */
+
+  color: #000000;
+  padding-top: 48px;
+  padding-bottom: 28px;
+}
+
+.starship_director,
+.starship_producer,
+.starship_date {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #434854;
+}

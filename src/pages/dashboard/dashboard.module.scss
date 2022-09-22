@@ -1,0 +1,10 @@
+.dashboard_container {
+  display: grid;
+  grid-template-columns: 19% 82%;
+  //   width: 100%;
+}
+
+.dashboard_content {
+  width: 98%;
+  background-color: #fff;
+}
