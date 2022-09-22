@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input:  renders a snapshot of <Input /> when input is passed to a component  1`] = `
+<div
+  className="input_container"
+>
+  <div
+    className="singleInput"
+  >
+    <input
+      className="input"
+      name="firstName"
+      onChange={[Function]}
+      type="text"
+      value="Gerald"
+    />
+    <small
+      className="placeholder"
+    >
+      First Name
+    </small>
+  </div>
+</div>
+`;

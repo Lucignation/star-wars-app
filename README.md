@@ -1,4 +1,4 @@
-# STAR-WARS_APP
+# STAR-WARS-APP
 
 A star-wars website built with [Api](https://swapi.dev/documentation). The home page is a login page allows a user to sign-in, all categories are films, species, people, starship.
 

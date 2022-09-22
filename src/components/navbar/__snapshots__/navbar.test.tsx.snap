@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders a snapshot of <Navbar /> when passed into a component 1`] = `
+<nav
+  className="navbar_container"
+>
+  <div
+    className="navbar_right_items"
+  >
+    <div
+      className="navbar_notification_avatar"
+    >
+      <div
+        className="navbar_notification_icon"
+      >
+        <img
+          alt="user notification"
+          src="notification.svg"
+        />
+      </div>
+      <div
+        className="navbar_avatar_icon"
+      >
+        <img
+          alt="account profile"
+          src="account.svg"
+        />
+      </div>
+      <p
+        className="navbar_user_name"
+      >
+        John Doe
+      </p>
+    </div>
+    <div
+      className="navbar_action_icon"
+    >
+      <img
+        alt="more actions"
+        src="three_dotted.svg"
+      />
+    </div>
+  </div>
+</nav>
+`;

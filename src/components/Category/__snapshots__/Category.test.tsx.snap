@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category enders a snapshot of <Category /> when passed into a component 1`] = `
+<div
+  className="category_container"
+>
+  <div
+    className="category_top_info"
+  >
+    <h2
+      className="category_title"
+    >
+      title
+    </h2>
+    <p
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": "5px",
+          "content": "",
+          "height": "26px",
+          "width": "27px",
+        }
+      }
+    />
+  </div>
+  <div
+    className="category_total"
+  >
+    30
+  </div>
+  <p
+    className="category_info"
+  >
+    category information
+  </p>
+</div>
+`;

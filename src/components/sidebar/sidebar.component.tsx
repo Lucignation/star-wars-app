@@ -6,9 +6,7 @@ import Logo from '../../assets/images/logo2.svg';
 import Overview from '../../assets/images/grid_small.svg';
 import { NavLink } from 'react-router-dom';
 
-type props = {
-  //   sidebarItems: ISidebarItems;
-};
+type props = {};
 const Sidebar: FC<props> = () => {
   return (
     <aside className={styles.sidebar_container}>
