@@ -105,10 +105,10 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    getPeople: (state: Store, action: PayloadAction<Store>) => {
+    getPeople: (state: Store, action: PayloadAction<IPeople>) => {
       return {
         ...state,
-        people: action.payload.people,
+        people: action.payload,
       };
     },
 

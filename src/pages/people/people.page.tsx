@@ -43,6 +43,8 @@ const People: FC<props> = ({ data }) => {
 
       const date = `${firstIndex}/${lastDate}`;
 
+      const gender = d?.gender.charAt(0).toUpperCase() + d?.gender.slice(1);
+
       return (
         <tr key={index} onClick={() => handleSelected(index + 1)}>
           <th scope='row'>
@@ -54,8 +56,8 @@ const People: FC<props> = ({ data }) => {
             />
           </th>
           <td>{d.name}</td>
-          <td>{d.birth_year}</td>
-          <td>{d.gender}</td>
+          <td>1900</td>
+          <td>{gender}</td>
           <td>{d.hair_color}</td>
           <td>{d.height} CM</td>
           <td>{date}</td>
