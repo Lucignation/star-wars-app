@@ -17,8 +17,6 @@ const Login = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const [error, setErrors] = useState<string>('');
-
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
@@ -27,7 +25,6 @@ const Login = () => {
     const emailValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!email || !password) {
-      // return setErrors("Username/Password can't be empty.");
       const notify = () =>
         toast.error("Email/Password can't be empty.", {
           theme: 'colored',
@@ -74,10 +71,6 @@ const Login = () => {
     console.log(signinObj);
 
     navigate('/dashboard');
-
-    // const res = await axiosInstance.post(url, signinObj);
-
-    // console.log(res);
   };
   return (
     <div className={styles.login_container}>

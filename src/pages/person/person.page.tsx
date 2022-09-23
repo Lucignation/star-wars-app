@@ -2,20 +2,19 @@ import { FC, useEffect, useState } from 'react';
 import styles from './person.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getPeople } from '../../store/Reducer';
+import { getPeople } from '../../store/reducer';
 
-import axiosInstance from '../../axio/index';
+import { setPerson } from '../../services/shared.services';
 
 import Cover from '../../assets/images/people.svg';
-import { Store } from '../../common/interfaces/interface';
+import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
-import { ISpecies } from '../../common/interfaces/ISpecies';
-import { IPeople } from '../../common/interfaces/IPeople';
+import { IPeople } from '../../types/interfaces/IPeople';
 
-type props = {};
+type Props = {};
 
-const Person: FC<props> = () => {
+const Person: FC<Props> = () => {
   const dispatch = useDispatch();
 
   const initialPerson = {
@@ -41,20 +40,18 @@ const Person: FC<props> = () => {
 
   const currentState: any = useSelector((state: Store) => state);
 
-  console.log(currentState.items);
-
   const { people } = currentState.items;
 
-  let { id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `/people/${id}`;
-      const res = await axiosInstance.get(url);
+      if (id) {
+        const data = await setPerson(id);
 
-      console.log(res.data);
-      setSpecies(res.data);
-      dispatch(getPeople(res.data));
+        setSpecies(data);
+        dispatch(getPeople(data));
+      }
     };
 
     fetchData();
@@ -64,8 +61,6 @@ const Person: FC<props> = () => {
 
   const gender =
     people?.gender.charAt(0).toUpperCase() + people?.gender.slice(1);
-
-  console.log(gender);
   return (
     <div className={styles.person_container}>
       <Sidebar />

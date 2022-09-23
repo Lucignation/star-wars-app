@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { Store } from '../common/interfaces/interface';
-import { IFilm } from '../common/interfaces/IFilm';
-import { IStarship } from '../common/interfaces/IStarship';
-import { ISpecies } from '../common/interfaces/ISpecies';
-import { IPeople } from '../common/interfaces/IPeople';
+import { Store } from '../types/interfaces/interface';
+import { IFilm } from '../types/interfaces/IFilm';
+import { IStarship } from '../types/interfaces/IStarship';
+import { ISpecies } from '../types/interfaces/ISpecies';
+import { IPeople } from '../types/interfaces/IPeople';
 
 const initialState: Store = {
   people: {

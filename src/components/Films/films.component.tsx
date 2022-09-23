@@ -2,28 +2,24 @@ import { FC, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { getFilms } from '../../store/Reducer';
+import { getFilms } from '../../store/reducer';
 
-import { IFilm } from '../../common/interfaces/IFilm';
+import { IFilm } from '../../types/interfaces/IFilm';
 
 import CategoryHOC from '../../HOC/CategoryHOC';
 
 import styles from './films.module.scss';
 
-import axiosInstance from '../../axio/index';
-
-type props = {
+type Props = {
   data: Array<IFilm>;
 };
 
-const Film: FC<props> = ({ data }) => {
+const Film: FC<Props> = ({ data }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFilms(data));
   }, [data]);
-  const [checked, setChecked] = useState<boolean>(false);
-  console.log(data);
 
   const handleSelected = (id: number) => {
     navigate(`/film/${id}`);

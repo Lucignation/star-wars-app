@@ -1,44 +1,34 @@
 import { FC, useEffect } from 'react';
-import { IFilm } from '../../common/interfaces/IFilm';
 import styles from './starship.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getStarship } from '../../store/Reducer';
+import { getStarship } from '../../store/reducer';
 
-import axiosInstance from '../../axio/index';
+import { setStarship } from '../../services/shared.services';
 
 import Cover from '../../assets/images/starship.svg';
-import { Store } from '../../common/interfaces/interface';
+import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 
-type props = {
-  //   filmItem: IFilm;
-};
+type Props = {};
 
-const Starship: FC<props> = () => {
+const Starship: FC<Props> = () => {
   const dispatch = useDispatch();
 
   const currentState: any = useSelector((state: Store) => state);
-
-  console.log(currentState.items);
 
   const { starship } = currentState.items;
 
   let { id } = useParams();
 
-  console.log(starship);
-
   useEffect(() => {
     try {
       const fetchData = async () => {
-        const url = `/starships/${id}`;
-        const res: any = await axiosInstance.get(url);
-        console.log(res);
-        dispatch(getStarship(res.data));
-
-        console.log(res.data);
-        console.log(res.response);
+        if (id) {
+          const data = await setStarship(id);
+          dispatch(getStarship(data));
+        }
       };
 
       fetchData();
@@ -46,8 +36,6 @@ const Starship: FC<props> = () => {
       console.log(error.response);
     }
   }, []);
-
-  console.log(id);
   return (
     <div className={styles.starship_container}>
       <Sidebar />

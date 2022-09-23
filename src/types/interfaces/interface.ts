@@ -4,10 +4,6 @@ import { IPlanet } from './IPlanet';
 import { IStarship } from './IStarship';
 import { ISpecies } from './ISpecies';
 
-export type UserContextState = {
-  user: {};
-};
-
 export type Store = {
   allPeople: Array<IPeople>;
   people: IPeople;

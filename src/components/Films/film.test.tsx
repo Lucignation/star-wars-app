@@ -1,8 +1,8 @@
-import axiosInstance from '../../axio/index';
+import axiosInstance from '../../config/axio.config';
 
 const fetchData = async () => {
   const res = await axiosInstance.get('films');
-  return res.data;
+  return res.data.results;
 };
 
 const mockData = fetchData();

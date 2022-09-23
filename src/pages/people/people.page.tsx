@@ -3,30 +3,25 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
-import { getAllPeople } from '../../store/Reducer';
+import { getAllPeople } from '../../store/reducer';
 
 import CategoryHOC from '../../HOC/CategoryHOC';
 
 import styles from './people.module.scss';
-
-import axiosInstance from '../../axio/index';
-import { IStarship } from '../../common/interfaces/IStarship';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
-import { IPeople } from '../../common/interfaces/IPeople';
+import { IPeople } from '../../types/interfaces/IPeople';
 
-type props = {
+type Props = {
   data: Array<IPeople>;
 };
 
-const People: FC<props> = ({ data }) => {
+const People: FC<Props> = ({ data }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllPeople(data));
   }, [data]);
-  const [checked, setChecked] = useState<boolean>(false);
-  console.log(data);
 
   const handleSelected = (id: number) => {
     navigate(`/people/${id}`);
@@ -64,7 +59,7 @@ const People: FC<props> = ({ data }) => {
         </tr>
       );
     })
-    .splice(0, 10);
+    .splice(0, 10); //making sure I get 10 items from the response data
 
   return (
     <div className={styles.people_container}>

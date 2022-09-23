@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { ICategory } from '../../common/interfaces/interface';
+import { ICategory } from '../../types/interfaces/interface';
 import styles from './category.module.scss';
 
-type props = {
+type Props = {
   category: ICategory;
 };
-const Category: FC<props> = ({ category }) => {
+const Category: FC<Props> = ({ category }) => {
   const bg = {
     content: '',
     backgroundColor: category.colorCode,

@@ -1,32 +1,28 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
-import { getSpecies } from '../../store/Reducer';
+import { getSpecies } from '../../store/reducer';
 
 import CategoryHOC from '../../HOC/CategoryHOC';
 
 import styles from './species.module.scss';
 
-import axiosInstance from '../../axio/index';
-import { IStarship } from '../../common/interfaces/IStarship';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
-import { ISpecies } from '../../common/interfaces/ISpecies';
+import { ISpecies } from '../../types/interfaces/ISpecies';
 
-type props = {
+type Props = {
   data: Array<ISpecies>;
 };
 
-const Species: FC<props> = ({ data }) => {
+const Species: FC<Props> = ({ data }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSpecies(data));
   }, [data]);
-  const [checked, setChecked] = useState<boolean>(false);
-  console.log(data);
 
   const handleSelected = (id: number) => {
     navigate(`/species/${id}`);
@@ -42,8 +38,6 @@ const Species: FC<props> = ({ data }) => {
         .join('/');
 
       const date = `${firstIndex}/${lastDate}`;
-
-      console.log(firstIndex);
 
       return (
         <tr key={index} onClick={() => handleSelected(index + 1)}>

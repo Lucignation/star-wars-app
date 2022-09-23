@@ -2,19 +2,19 @@ import { FC, useEffect, useState } from 'react';
 import styles from './specie.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getSpecie } from '../../store/Reducer';
+import { getSpecie } from '../../store/reducer';
 
-import axiosInstance from '../../axio/index';
+import { setSpecie } from '../../services/shared.services';
 
 import Cover from '../../assets/images/species.svg';
-import { Store } from '../../common/interfaces/interface';
+import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
-import { ISpecies } from '../../common/interfaces/ISpecies';
+import { ISpecies } from '../../types/interfaces/ISpecies';
 
-type props = {};
+type Props = {};
 
-const Specie: FC<props> = () => {
+const Specie: FC<Props> = () => {
   const dispatch = useDispatch();
 
   const initialSpecies = {
@@ -39,26 +39,23 @@ const Specie: FC<props> = () => {
 
   const currentState: any = useSelector((state: Store) => state);
 
-  console.log(currentState.items);
-
   const { specie } = currentState.items;
 
   let { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `/species/${id}`;
-      const res = await axiosInstance.get(url);
-      setSpecies(res.data);
-      dispatch(getSpecie(res.data));
+      if (id) {
+        const data = await setSpecie(id);
+        setSpecies(data);
+        dispatch(getSpecie(data));
+      }
     };
 
     fetchData();
 
     return () => setSpecies(initialSpecies);
   }, []);
-
-  console.log(id);
   return (
     <div className={styles.specie_container}>
       <Sidebar />
@@ -67,15 +64,15 @@ const Specie: FC<props> = () => {
         <div className={styles.specie_content_info}>
           <img src={Cover} alt='Cover page' />
           <div>
-            <h1 className={styles.specie_title}>{species?.name}</h1>
+            <h1 className={styles.specie_title}>{specie?.name}</h1>
             <p className={styles.specie_director}>
-              Designation: {species?.designation}
+              Designation: {specie?.designation}
             </p>
             <p className={styles.specie_producer}>
-              Language: {species?.language}
+              Language: {specie?.language}
             </p>
             <p className={styles.specie_date}>
-              Eye Colors: {species?.eye_colors}.
+              Eye Colors: {specie?.eye_colors}.
             </p>
 
             <p className={styles.specie_average_lifespan}>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axiosInstance from '../axio/index';
+import { getData } from '../services/shared.services';
 
 const CategoryHOC = (Component: any, entity: string) => {
   const WithCategory = () => {
@@ -8,9 +8,8 @@ const CategoryHOC = (Component: any, entity: string) => {
     useEffect(() => {
       try {
         const fetchData = async () => {
-          const url = entity;
-          const res: any = await axiosInstance.get(url);
-          setData(res.data.results);
+          const data = await getData(entity);
+          setData(data);
         };
 
         fetchData();
@@ -20,8 +19,6 @@ const CategoryHOC = (Component: any, entity: string) => {
         console.log(error.message);
       }
     }, []);
-
-    console.log(data);
 
     return (
       <div>

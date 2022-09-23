@@ -10,11 +10,11 @@ import { IoIosArrowBack } from 'react-icons/io';
 
 import styles from './navbar.module.scss';
 
-type props = {
+type Props = {
   backBtn?: boolean;
 };
 
-const Navbar: FC<props> = ({ backBtn }) => {
+const Navbar: FC<Props> = ({ backBtn }) => {
   const navigate = useNavigate();
 
   const handleBackBtn = () => {

@@ -1,30 +1,27 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { getStarships } from '../../store/Reducer';
+import { getStarships } from '../../store/reducer';
 
 import CategoryHOC from '../../HOC/CategoryHOC';
 
 import styles from './starships.module.scss';
 
-import axiosInstance from '../../axio/index';
-import { IStarship } from '../../common/interfaces/IStarship';
+import { IStarship } from '../../types/interfaces/IStarship';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 
-type props = {
+type Props = {
   data: Array<IStarship>;
 };
 
-const Starships: FC<props> = ({ data }) => {
+const Starships: FC<Props> = ({ data }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getStarships(data));
   }, [data]);
-  const [checked, setChecked] = useState<boolean>(false);
-  console.log(data);
 
   const handleSelected = (id: number) => {
     navigate(`/starships/${id}`);
@@ -37,10 +34,8 @@ const Starships: FC<props> = ({ data }) => {
             <input
               type='checkbox'
               className='form-check-input'
-              // checked={checked}
               readOnly
               id='mastercheck'
-              //   onChange={(e) =>setChecked(e.target.value)}
             />
           </th>
           <td>{d.name}</td>

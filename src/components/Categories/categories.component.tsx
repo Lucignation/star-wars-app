@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICategory } from '../../common/interfaces/interface';
+import { ICategory } from '../../types/interfaces/interface';
 import Category from '../Category/category.component';
 import styles from './categories.module.scss';
 

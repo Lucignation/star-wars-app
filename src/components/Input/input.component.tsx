@@ -1,8 +1,8 @@
-import { FC, useState, useEffect, ChangeEvent } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './input.module.scss';
 
-type props = {
+type Props = {
   formType?: string;
   placeholder?: string;
   value: string | number;
@@ -10,12 +10,8 @@ type props = {
   name: string;
 };
 
-const Input: FC<props> = ({ formType, placeholder, name, setValue, value }) => {
+const Input: FC<Props> = ({ formType, placeholder, name, setValue, value }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-
-  //   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //     setValue(e.target.value);
-  //   };
 
   return (
     <div className={styles.input_container}>

@@ -1,6 +1,7 @@
 # STAR-WARS-APP
 
 A star-wars website built with [Api](https://swapi.dev/documentation). The home page is a login page allows a user to sign-in, all categories are films, species, people, starship.
+To login, email must be a valid email, password must be a combination of letter and number and it must be 6 characters long.
 
 ## Frameworks and Libraries
 

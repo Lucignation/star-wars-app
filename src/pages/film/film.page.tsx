@@ -1,22 +1,21 @@
 import { FC, useEffect } from 'react';
-import { IFilm } from '../../common/interfaces/IFilm';
 import styles from './film.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getFilm } from '../../store/Reducer';
+import { getFilm } from '../../store/reducer';
 
-import axiosInstance from '../../axio/index';
+import axiosInstance from '../../config/axio.config';
+
+import { setFilm } from '../../services/shared.services';
 
 import Cover from '../../assets/images/film.svg';
-import { Store } from '../../common/interfaces/interface';
+import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 
-type props = {
-  //   filmItem: IFilm;
-};
+type Props = {};
 
-const Film: FC<props> = () => {
+const Film: FC<Props> = () => {
   const dispatch = useDispatch();
 
   const currentState: any = useSelector((state: Store) => state);
@@ -25,19 +24,18 @@ const Film: FC<props> = () => {
 
   const { film } = currentState.items;
 
-  let { id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = `/films/${id}`;
-      const res = await axiosInstance.get(url);
-      dispatch(getFilm(res.data));
+      if (id) {
+        const data = await setFilm(id);
+        dispatch(getFilm(data));
+      }
     };
 
     fetchData();
   }, []);
-
-  console.log(id);
   return (
     <div className={styles.film_container}>
       <Sidebar />
