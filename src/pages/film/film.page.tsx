@@ -12,6 +12,7 @@ import Cover from '../../assets/images/film.svg';
 import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
+import Backdrop from '../../components/backdrop/backdrop.component';
 
 type Props = {};
 
@@ -38,7 +39,7 @@ const Film: FC<Props> = () => {
   }, []);
   return (
     <div className={styles.film_container}>
-      <Sidebar />
+      <Backdrop />
       <div className={styles.film_content}>
         <Navbar backBtn={true} />
         <div className={styles.film_content_info}>

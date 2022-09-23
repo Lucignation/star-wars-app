@@ -40,3 +40,15 @@
   line-height: 24px;
   color: #434854;
 }
+
+@media (max-width: 540px) {
+  .specie_container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .specie_content_info {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}

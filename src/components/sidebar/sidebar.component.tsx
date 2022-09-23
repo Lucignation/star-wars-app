@@ -5,8 +5,11 @@ import Logo from '../../assets/images/logo2.svg';
 import Overview from '../../assets/images/grid_small.svg';
 import { NavLink, useLocation, useMatch } from 'react-router-dom';
 
-type Props = {};
-const Sidebar: FC<Props> = () => {
+type Props = {
+  hideToggle?: any;
+  currentState?: boolean;
+};
+const Sidebar: FC<Props> = ({ hideToggle, currentState }) => {
   const location = useLocation();
 
   let filmsMatch = useMatch('/film/:id'); //www.mywebsite.com/films/:id
@@ -46,6 +49,7 @@ const Sidebar: FC<Props> = () => {
             ? `${styles.sidebar_active} ${styles.sidebar_item} ${styles.sidebar_overview}`
             : `${styles.sidebar_item} ${styles.sidebar_overview}`
         }
+        onClick={() => hideToggle(!currentState)}
       >
         <img src={Overview} alt='dashboard overview' />
         <span className={styles.sidebar_overview_text}>
@@ -59,6 +63,7 @@ const Sidebar: FC<Props> = () => {
               ? `${styles.sidebar_active} ${styles.sidebar_item}`
               : `${styles.sidebar_item}`
           }
+          onClick={(currentState) => hideToggle(!currentState)}
         >
           <div
             // className={`${styles.sidebar_item_icon} ${styles.starship}`}
@@ -75,6 +80,7 @@ const Sidebar: FC<Props> = () => {
               ? `${styles.sidebar_active} ${styles.sidebar_item}`
               : `${styles.sidebar_item}`
           }
+          onClick={(currentState) => hideToggle(!currentState)}
         >
           <div
             // className={`${styles.sidebar_item_icon} ${styles.people}`}
@@ -91,6 +97,7 @@ const Sidebar: FC<Props> = () => {
               ? `${styles.sidebar_active} ${styles.sidebar_item}`
               : `${styles.sidebar_item}`
           }
+          onClick={(currentState) => hideToggle(!currentState)}
         >
           <div
             // className={`${styles.sidebar_item_icon} ${styles.species}`}

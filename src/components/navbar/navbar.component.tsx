@@ -41,7 +41,9 @@ const Navbar: FC<Props> = ({ backBtn }) => {
           <p className={styles.navbar_user_name}>John Doe</p>
         </div>
 
-        <div className={styles.navbar_action_icon}>
+        <div
+          className={`${styles.navbar_action_icon} ${styles.navbar_actions}`}
+        >
           <img src={Threedotted} alt='more actions' />
         </div>
       </div>

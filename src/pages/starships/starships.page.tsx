@@ -11,6 +11,7 @@ import styles from './starships.module.scss';
 import { IStarship } from '../../types/interfaces/IStarship';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
+import Backdrop from '../../components/backdrop/backdrop.component';
 
 type Props = {
   data: Array<IStarship>;
@@ -51,35 +52,39 @@ const Starships: FC<Props> = ({ data }) => {
 
   return (
     <div className={styles.starships_container}>
-      <Sidebar />
+      <Backdrop />
       <div className={styles.starships_content}>
         <Navbar />
         <div className={styles.starships_main}>
           <p className={styles.starships_title}>Starships</p>
           {data.length > 0 ? (
-            <table className={`table table-bordered ${styles.table_container}`}>
-              <thead className={styles.table_heading}>
-                <tr>
-                  <th scope='col'>
-                    <input
-                      type='checkbox'
-                      className='form-check-input'
-                      // checked={checked}
-                      id='mastercheck'
-                      // onChange={(e) => setChecked(e.target.checked)}
-                      readOnly
-                    />
-                  </th>
-                  <th scope='col'>Name</th>
-                  <th scope='col'>Model</th>
-                  <th scope='col'>Class</th>
-                  <th scope='col'>Passenger</th>
-                  <th scope='col'>Length</th>
-                  <th scope='col'>Character</th>
-                </tr>
-              </thead>
-              <tbody>{renderedStarships}</tbody>
-            </table>
+            <div className={styles.table_main_container}>
+              <table
+                className={`table table-bordered ${styles.table_container}`}
+              >
+                <thead className={styles.table_heading}>
+                  <tr>
+                    <th scope='col'>
+                      <input
+                        type='checkbox'
+                        className='form-check-input'
+                        // checked={checked}
+                        id='mastercheck'
+                        // onChange={(e) => setChecked(e.target.checked)}
+                        readOnly
+                      />
+                    </th>
+                    <th scope='col'>Name</th>
+                    <th scope='col'>Model</th>
+                    <th scope='col'>Class</th>
+                    <th scope='col'>Passenger</th>
+                    <th scope='col'>Length</th>
+                    <th scope='col'>Character</th>
+                  </tr>
+                </thead>
+                <tbody>{renderedStarships}</tbody>
+              </table>
+            </div>
           ) : (
             <p>loading...</p>
           )}

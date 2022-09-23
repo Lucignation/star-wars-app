@@ -11,6 +11,7 @@ import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 import { ISpecies } from '../../types/interfaces/ISpecies';
+import Backdrop from '../../components/backdrop/backdrop.component';
 
 type Props = {};
 
@@ -58,7 +59,7 @@ const Specie: FC<Props> = () => {
   }, []);
   return (
     <div className={styles.specie_container}>
-      <Sidebar />
+      <Backdrop />
       <div className={styles.specie_content}>
         <Navbar backBtn={true} />
         <div className={styles.specie_content_info}>

@@ -11,6 +11,7 @@ import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 import { IPeople } from '../../types/interfaces/IPeople';
+import Backdrop from '../../components/backdrop/backdrop.component';
 
 type Props = {};
 
@@ -63,7 +64,7 @@ const Person: FC<Props> = () => {
     people?.gender.charAt(0).toUpperCase() + people?.gender.slice(1);
   return (
     <div className={styles.person_container}>
-      <Sidebar />
+      <Backdrop />
       <div className={styles.person_content}>
         <Navbar backBtn={true} />
         <div className={styles.person_content_info}>

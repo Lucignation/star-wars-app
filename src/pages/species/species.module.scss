@@ -51,3 +51,14 @@ tr {
 
   color: #a4a7b7;
 }
+
+@media (max-width: 540px) {
+  .species_container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+   .table_main_container {
+    overflow-x: auto;
+  }
+}

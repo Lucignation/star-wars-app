@@ -33,7 +33,7 @@ exports[`Navbar renders a snapshot of <Navbar /> when passed into a component 1`
       </p>
     </div>
     <div
-      className="navbar_action_icon"
+      className="navbar_action_icon navbar_actions"
     >
       <img
         alt="more actions"

@@ -6,3 +6,14 @@
   padding-right: 33px;
   margin-top: 44px;
 }
+
+@media (max-width: 540px) {
+  .category_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 55px;
+    padding-left: 18px;
+    padding-right: 33px;
+    margin-top: 44px;
+  }
+}

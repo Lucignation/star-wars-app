@@ -10,6 +10,7 @@ import Cover from '../../assets/images/starship.svg';
 import { Store } from '../../types/interfaces/interface';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
+import Backdrop from '../../components/backdrop/backdrop.component';
 
 type Props = {};
 
@@ -38,7 +39,7 @@ const Starship: FC<Props> = () => {
   }, []);
   return (
     <div className={styles.starship_container}>
-      <Sidebar />
+      <Backdrop />
       <div className={styles.starship_content}>
         <Navbar backBtn={true} />
         <div className={styles.starship_content_info}>

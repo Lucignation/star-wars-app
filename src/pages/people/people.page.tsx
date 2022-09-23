@@ -11,6 +11,7 @@ import styles from './people.module.scss';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 import { IPeople } from '../../types/interfaces/IPeople';
+import Backdrop from '../../components/backdrop/backdrop.component';
 
 type Props = {
   data: Array<IPeople>;
@@ -63,35 +64,39 @@ const People: FC<Props> = ({ data }) => {
 
   return (
     <div className={styles.people_container}>
-      <Sidebar />
+      <Backdrop />
       <div className={styles.people_content}>
         <Navbar />
         <div className={styles.people_main}>
           <p className={styles.people_title}>People</p>
           {data.length > 0 ? (
-            <table className={`table table-bordered ${styles.table_container}`}>
-              <thead className={styles.table_heading}>
-                <tr>
-                  <th scope='col'>
-                    <input
-                      type='checkbox'
-                      className='form-check-input'
-                      // checked={checked}
-                      id='mastercheck'
-                      // onChange={(e) => setChecked(e.target.checked)}
-                      readOnly
-                    />
-                  </th>
-                  <th scope='col'>Name</th>
-                  <th scope='col'>Birth year</th>
-                  <th scope='col'>Gender</th>
-                  <th scope='col'>Hair Color</th>
-                  <th scope='col'>Height</th>
-                  <th scope='col'>Created</th>
-                </tr>
-              </thead>
-              <tbody>{renderedPeople}</tbody>
-            </table>
+            <div className={styles.table_main_container}>
+              <table
+                className={`table table-bordered ${styles.table_container}`}
+              >
+                <thead className={styles.table_heading}>
+                  <tr>
+                    <th scope='col'>
+                      <input
+                        type='checkbox'
+                        className='form-check-input'
+                        // checked={checked}
+                        id='mastercheck'
+                        // onChange={(e) => setChecked(e.target.checked)}
+                        readOnly
+                      />
+                    </th>
+                    <th scope='col'>Name</th>
+                    <th scope='col'>Birth year</th>
+                    <th scope='col'>Gender</th>
+                    <th scope='col'>Hair Color</th>
+                    <th scope='col'>Height</th>
+                    <th scope='col'>Created</th>
+                  </tr>
+                </thead>
+                <tbody>{renderedPeople}</tbody>
+              </table>
+            </div>
           ) : (
             <p>loading...</p>
           )}

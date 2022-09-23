@@ -8,3 +8,11 @@
   width: 98%;
   background-color: #fff;
 }
+
+@media (max-width: 540px) {
+  .dashboard_container {
+    display: grid;
+    grid-template-columns: 100%;
+    //   width: 100%;
+  }
+}

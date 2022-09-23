@@ -1,110 +1,4 @@
-// .sidebar_container {
-//   //   width: 272px;
-//   width: 100%;
-//   height: 1003px;
-//   left: 0px;
-//   top: 0px;
-
-//   background: #031434;
-//   padding-top: 32px;
-//   padding-left: 24px;
-// }
-
-// .sidebar_overview {
-//   // font-family: 'Inter', sans-serif;
-//   // font-style: normal;
-//   // font-weight: 600;
-//   // font-size: 16px;
-//   // line-height: 24px;
-//   // /* identical to box height, or 150% */
-//   // margin-bottom: 33px;
-
-//   // color: #ffffff;
-//   // display: grid;
-//   // grid-template-columns: repeat(2, 1fr);
-//   // justify-content: space-around;
-//   // width: 40%;
-
-//   // text-align: left;
-
-//   margin-top: 30px !important;
-// }
-
-// .sidebar_overview_text a {
-//   list-style: none !important;
-// }
-
-// .sidebar_active {
-//   background: #0a74dc;
-//   border-radius: 4px;
-//   width: 202px;
-//   //   height: 48px;
-//   padding: 15px;
-//   //   padding: 15px;
-//   color: #fff;
-//   // margin-top: 30px;
-//   margin-bottom: 72px;
-//   position: relative;
-//   padding-left: 27px;
-// }
-// // .sidebar_overview_text {
-// //   padding-left: 19px;
-// //   top: 14px;
-// //   position: absolute;
-
-// //   font-family: 'Inter', sans-serif;
-// //   font-style: normal;
-// //   font-weight: 600;
-// //   font-size: 16px;
-// //   line-height: 24px;
-// //   /* identical to box height, or 150% */
-
-// //   color: #ffffff;
-// // }
-
-// .sidebar_item a {
-//   color: #fff;
-//   text-decoration: none;
-//   text-align: left;
-// }
-
-// .sidebar_item {
-//   font-family: 'Inter', sans-serif;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 16px;
-//   line-height: 24px;
-//   /* identical to box height, or 150% */
-//   margin-bottom: 33px;
-
-//   color: #ffffff;
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   justify-content: space-around;
-//   width: 40%;
-
-//   text-align: left;
-// }
-
-// .sidebar_item_icon {
-//   content: '';
-//   width: 17px;
-//   height: 16px;
-
-//   background: #a9c1ff;
-//   border-radius: 5px;
-// }
-
-// .people {
-//   background: #ffa9ec;
-// }
-
-// .species {
-//   background: #fdffa9;
-// }
-
 .sidebar_container {
-  //   width: 272px;
   width: 100%;
   height: 1003px;
   left: 0px;
@@ -116,9 +10,6 @@
 }
 
 .sidebar_item a {
-  // line-height: 24px;
-  /* identical to box height, or 150% */
-
   color: #ffffff;
   text-decoration: none;
 }
@@ -132,11 +23,6 @@
   font-size: 16px;
   width: 202px;
   padding: 15px;
-  // padding-left: 40px;
-}
-
-.sidebar_item:first-child {
-  // padding-top: 40px;
 }
 
 .sidebar_overview {
@@ -147,6 +33,10 @@
 .sidebar_overview_text {
   padding-left: 20px;
   padding-top: 9px;
+}
+
+.sidebar_overview a:hover {
+  color: #e2e2e2;
 }
 
 .sidebar_item_link {
@@ -167,4 +57,15 @@
 
 .sidebar_item_link :hover {
   color: #e2e2e2;
+}
+
+@media (max-width: 540px) {
+  .logo_avatar {
+    margin-top: 60px;
+  }
+
+  .sidebar_overview {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 }

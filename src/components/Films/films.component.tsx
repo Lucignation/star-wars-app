@@ -15,6 +15,9 @@ type Props = {
 };
 
 const Film: FC<Props> = ({ data }) => {
+  const responsiveTable = {
+    overflowX: 'auto',
+  };
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -53,29 +56,31 @@ const Film: FC<Props> = ({ data }) => {
     <div className={styles.films_container}>
       <p className={styles.films_title}>Films</p>
       {data.length > 0 ? (
-        <table className={`table table-bordered ${styles.table_container}`}>
-          <thead className={styles.table_heading}>
-            <tr>
-              <th scope='col'>
-                <input
-                  type='checkbox'
-                  className='form-check-input'
-                  // checked={checked}
-                  id='mastercheck'
-                  // onChange={(e) => setChecked(e.target.checked)}
-                  readOnly
-                />
-              </th>
-              <th scope='col'>Film Title</th>
-              <th scope='col'>Release Date</th>
-              <th scope='col'>Director</th>
-              <th scope='col'>Producer</th>
-              <th scope='col'>Episode ID</th>
-              <th scope='col'>Character</th>
-            </tr>
-          </thead>
-          <tbody>{renderedFilms}</tbody>
-        </table>
+        <div className={styles.table_main_container}>
+          <table className={`table table-bordered ${styles.table_container}`}>
+            <thead className={styles.table_heading}>
+              <tr>
+                <th scope='col'>
+                  <input
+                    type='checkbox'
+                    className='form-check-input'
+                    // checked={checked}
+                    id='mastercheck'
+                    // onChange={(e) => setChecked(e.target.checked)}
+                    readOnly
+                  />
+                </th>
+                <th scope='col'>Film Title</th>
+                <th scope='col'>Release Date</th>
+                <th scope='col'>Director</th>
+                <th scope='col'>Producer</th>
+                <th scope='col'>Episode ID</th>
+                <th scope='col'>Character</th>
+              </tr>
+            </thead>
+            <tbody>{renderedFilms}</tbody>
+          </table>
+        </div>
       ) : (
         <p>loading...</p>
       )}

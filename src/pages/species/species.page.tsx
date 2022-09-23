@@ -12,6 +12,7 @@ import styles from './species.module.scss';
 import Navbar from '../../components/navbar/navbar.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
 import { ISpecies } from '../../types/interfaces/ISpecies';
+import Backdrop from '../../components/backdrop/backdrop.component';
 
 type Props = {
   data: Array<ISpecies>;
@@ -64,35 +65,39 @@ const Species: FC<Props> = ({ data }) => {
 
   return (
     <div className={styles.species_container}>
-      <Sidebar />
+      <Backdrop />
       <div className={styles.species_content}>
         <Navbar />
         <div className={styles.species_main}>
           <p className={styles.species_title}>Species</p>
           {data.length > 0 ? (
-            <table className={`table table-bordered ${styles.table_container}`}>
-              <thead className={styles.table_heading}>
-                <tr>
-                  <th scope='col'>
-                    <input
-                      type='checkbox'
-                      className='form-check-input'
-                      // checked={checked}
-                      id='mastercheck'
-                      // onChange={(e) => setChecked(e.target.checked)}
-                      readOnly
-                    />
-                  </th>
-                  <th scope='col'>Name</th>
-                  <th scope='col'>Classification</th>
-                  <th scope='col'>Eye colors</th>
-                  <th scope='col'>Hair Color</th>
-                  <th scope='col'>Height</th>
-                  <th scope='col'>Created</th>
-                </tr>
-              </thead>
-              <tbody>{renderedSpecies}</tbody>
-            </table>
+            <div className={styles.table_main_container}>
+              <table
+                className={`table table-bordered ${styles.table_container}`}
+              >
+                <thead className={styles.table_heading}>
+                  <tr>
+                    <th scope='col'>
+                      <input
+                        type='checkbox'
+                        className='form-check-input'
+                        // checked={checked}
+                        id='mastercheck'
+                        // onChange={(e) => setChecked(e.target.checked)}
+                        readOnly
+                      />
+                    </th>
+                    <th scope='col'>Name</th>
+                    <th scope='col'>Classification</th>
+                    <th scope='col'>Eye colors</th>
+                    <th scope='col'>Hair Color</th>
+                    <th scope='col'>Height</th>
+                    <th scope='col'>Created</th>
+                  </tr>
+                </thead>
+                <tbody>{renderedSpecies}</tbody>
+              </table>
+            </div>
           ) : (
             <p>loading...</p>
           )}
