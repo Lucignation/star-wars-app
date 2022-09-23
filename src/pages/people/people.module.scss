@@ -26,6 +26,10 @@
   border-radius: 14px !important;
 }
 
+.table_main_container {
+  overflow-x: auto;
+}
+
 tr:nth-child(even) {
   background-color: #eeeeee3f;
 }
