@@ -41,3 +41,18 @@
   color: #00992b;
   margin-top: -7px;
 }
+
+@media (max-width: 912px) {
+  .category_title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .category_container {
+    margin-bottom: 30px;
+  }
+  .category_title {
+    font-size: 18px;
+  }
+}

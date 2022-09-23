@@ -11,7 +11,6 @@ const Backdrop = () => {
     setHasShown(!hasShown);
   };
 
-  console.log(hasShown);
   return (
     <div>
       <div onClick={handleNavbarToggle} className={`${styles.toggleAction}`}>
