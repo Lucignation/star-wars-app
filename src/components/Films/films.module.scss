@@ -41,6 +41,12 @@ tr {
   color: #a4a7b7;
 }
 
+@media (max-width: 912px) {
+  .table_main_container {
+    overflow-x: auto;
+  }
+}
+
 @media (max-width: 540px) {
   .table_main_container {
     overflow-x: auto;

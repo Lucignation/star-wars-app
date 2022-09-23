@@ -9,6 +9,16 @@
   background-color: #fff;
 }
 
+@media (max-width: 912px) {
+  .dashboard_container {
+    display: grid;
+    grid-template-columns: 100%;
+
+    position: relative;
+    //   width: 100%;
+  }
+}
+
 @media (max-width: 540px) {
   .dashboard_container {
     display: grid;

@@ -77,6 +77,42 @@
   padding-left: 10px;
 }
 
+@media (max-width: 912px) {
+  .navbar_container {
+    width: 100%;
+  }
+  .navbar_right_items {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    // background-color: red;
+    width: 47% !important;
+    margin-left: 58%;
+    padding-top: 24px;
+    padding-bottom: 10px;
+  }
+
+  .navbar_actions {
+    // background-color: goldenrod;
+    margin-left: -30px;
+    width: 20%;
+  }
+  .navbar_go_back {
+    // background-color: purple;
+    width: 30%;
+    margin-bottom: -53px;
+    padding-left: 60px;
+    padding-top: 28px;
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #a4a7b7;
+  }
+}
+
 @media (max-width: 540px) {
   .navbar_container {
     width: 100%;

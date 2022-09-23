@@ -59,6 +59,17 @@
   color: #e2e2e2;
 }
 
+@media (max-width: 912px) {
+  .logo_avatar {
+    margin-top: 60px;
+  }
+
+  .sidebar_overview {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
 @media (max-width: 540px) {
   .logo_avatar {
     margin-top: 60px;

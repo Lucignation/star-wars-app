@@ -3,6 +3,47 @@
   display: none;
 }
 
+@media (max-width: 912px) {
+  .mobileView {
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    // -webkit-animation: slide 0.5s forwards;
+    // -webkit-animation-delay: 2s;
+    // animation: slide 0.9s ease-in;
+    transition: all 0.5s ease-in-out;
+    // animation-delay: 2s;
+  }
+
+  .toggleAction {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    z-index: 1000;
+  }
+
+  .close_btn {
+    color: #fff !important;
+  }
+  .DesktopView {
+    display: none;
+  }
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 100%;
+  }
+}
+
 @media (max-width: 540px) {
   .mobileView {
     display: block;

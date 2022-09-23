@@ -52,6 +52,16 @@ tr {
   color: #a4a7b7;
 }
 
+@media (max-width: 912px) {
+  .starships_container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .table_main_container {
+    overflow-x: auto;
+  }
+}
+
 @media (max-width: 540px) {
   .starships_container {
     display: grid;
