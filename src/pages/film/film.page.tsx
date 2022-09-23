@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import styles from './film.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getFilm } from '../../store/reducer';
+import { getFilm } from '../../store/Reducer';
 
 import axiosInstance from '../../config/axio.config';
 

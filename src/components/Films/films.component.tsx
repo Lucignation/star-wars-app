@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { getFilms } from '../../store/reducer';
+import { getFilms } from '../../store/Reducer';
 
 import { IFilm } from '../../types/interfaces/IFilm';
 

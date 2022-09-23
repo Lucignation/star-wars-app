@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import styles from './starship.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getStarship } from '../../store/reducer';
+import { getStarship } from '../../store/Reducer';
 
 import { setStarship } from '../../services/shared.services';
 

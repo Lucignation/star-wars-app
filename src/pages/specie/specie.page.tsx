@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import styles from './specie.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getSpecie } from '../../store/reducer';
+import { getSpecie } from '../../store/Reducer';
 
 import { setSpecie } from '../../services/shared.services';
 

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
-import { getAllPeople } from '../../store/reducer';
+import { getAllPeople } from '../../store/Reducer';
 
 import CategoryHOC from '../../HOC/CategoryHOC';
 

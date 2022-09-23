@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import styles from './person.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getPeople } from '../../store/reducer';
+import { getPeople } from '../../store/Reducer';
 
 import { setPerson } from '../../services/shared.services';
 

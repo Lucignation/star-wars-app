@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { getStarships } from '../../store/reducer';
+import { getStarships } from '../../store/Reducer';
 
 import CategoryHOC from '../../HOC/CategoryHOC';
 
